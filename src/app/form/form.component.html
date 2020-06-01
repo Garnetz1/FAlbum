@@ -1,0 +1,61 @@
+<h1>Template Driven Form</h1>
+<div>
+    <p>email: {{email}}</p>
+    <p>name: {{name}}</p>
+    <div>
+        <input type="button" (click)= "formValue=null" value="Reset form">
+    </div>
+        <div class="row" style="padding-left: 50">
+            <div class="col-md-12">
+                <div *ngIf="!formValue">
+                    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                        <div>
+                                <label for="fname">First name:</label><br>
+                                <input type="text" id="fname" name="fname" [ngModel]="name" required>
+                                <!-- <span *ngIf="f.controls("fname").hasError('valid')">name is required</span> -->
+                                <br>
+                        </div>
+                        <div>
+                            <label for="email">EMAIL:</label><br>
+                            <input type="email" id="email" name="email" [(ngModel)]="email"><br>
+                        </div>
+                        <div> 
+                            <label for="gender">Gender</label><br>
+                            <input type="radio" id="male" name="gender" value="male" ngModel>
+                            <label for="male">Male</label><br>
+                            <input type="radio" id="female" name="gender" value="female" ngModel>
+                            <label for="female">Female</label><br>
+                            <input type="radio" id="other" name="gender" value="other" ngModel>
+                            <label for="other">Other</label>                          
+                        </div>
+                        <div>
+                            <label for="message">BIO</label><br>
+                            <textarea name="message" rows="10" cols="30" ngModel>
+                                The cat was playing in the garden.
+                            </textarea>
+                        </div>
+                        <div>
+                            <input type="submit" value="Submit" [disabled]="!f.valid">
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            <div class="col-md-12">
+                <div *ngIf="formValue">
+                    <div *ngFor="let item of register; let i = index;">
+                        <p> name: {{item.fname}}</p>
+                        <p> email: {{item.email}}</p>
+                        <p> gender: {{item.gender}}</p>
+                        <p> message: {{item.message}}</p>
+                        <hr>
+                    </div>
+                   
+    
+                </div>
+            </div>
+        </div>
+        
+       
+    
+</div>

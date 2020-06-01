@@ -1,0 +1,49 @@
+<div class="wrapper">
+    <div class="container">
+      <h1 class="centre">FINTRAK SOFTWARE ALBUM</h1>
+      <!--<ul class="list-group small-width">
+          <li class="list-group-item"><strong>Ruky</strong></li>
+          <li class="list-group-item"><strong>Najeem</strong></li>
+          <li class="list-group-item"><strong>Sarah</strong></li>
+          <li class="list-group-item"><strong>Zino</strong></li>
+          <li class="list-group-item"><strong>charlse</strong></li>
+      </ul>
+      <hr> -->
+      <!-- <div class="row">
+        <div class="col-md-4">1</div>
+        <div class="col-md-4">2</div>
+        <div class="col-md-4">3</div>
+      </div> -->
+    
+       <!--<div class="row">
+        <div class="col-md-4" *ngFor="let trainee of academy">{{trainee.name}}</div> Displays the names of the academy array.
+      </div> 
+      <div class="row">
+        
+        <div *ngFor="let trainee of trainees;">{{trainee.name}}</div>
+
+      </div> -->
+   <div class="row">
+        <div class="col-md-10">
+          <div class="row">
+            <div class="col-md-4" *ngFor="let trainees of academy; let i = index">
+              <app-trainee [trainees]="trainees" (selectedtrainee)=traineeListener($event)></app-trainee>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card milk" style="width: 18rem;" *ngIf="activeTrainee">
+            <img src="./assets/img/{{activeTrainee.image}}" class="card-img-top profile_pic" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{activeTrainee.name}}</h5>
+              <p><b>Complexion</b> {{activeTrainee.complexion}}</p>
+              <p><b>Hobbies</b></p>
+              <ul>
+                <li *ngFor="let hobby of activeTrainee.hobbies">{{hobby}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>

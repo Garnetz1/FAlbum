@@ -1,0 +1,65 @@
+ 
+ <div class="container">
+     <form [formGroup]="traineeForm"   (ngSubmit)="addTrainee(traineeForm)">
+         <div>
+             <label for="name">Full Name</label>
+             <input type="text" class="form-control" formControlName="name">
+         </div>
+
+         <div>
+            <label for="complexion">Complexion</label>
+            <select class="form-control"  formControlName="complexion">
+                <option>Complexion</option>
+                <option *ngFor="let item of complexions" [value]="item">{{item}}</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="hobbies">Hobbies</label>
+            <input type="text" class="form-control" formControlName="hobbies"
+             placeholder="Comma separated hobbies">
+        </div>
+
+        <div>
+            <label for="genders">Gender</label>
+            <select class="form-control"  formControlName="gender">
+                <option>Gender</option>
+                <option *ngFor="let item of genders" [value]="item">{{item}}</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="dateofbirth">Date of birth</label>
+            <input type="text" class="form-control" formControlName="dateofbirth" placeholder="Format: dd/mm"
+             >
+        </div>
+        <div>
+            <label for="almamata">Almamata</label>
+            <input type="text" class="form-control" formControlName="almamata" 
+             >
+        </div>
+        <div>
+            <label for="discipline">Discipline</label>
+            <input type="text" class="form-control" formControlName="discipline" 
+             >
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="email" class="form-control" formControlName="email" 
+             >
+        </div>
+        <div>
+            <label for="telephone">Telephone</label>
+            <input type="text" class="form-control" formControlName="telephone" 
+             >
+        </div>
+        <div>
+            <label for="about">Tell us about You</label>
+            <textarea name="about" id="" cols="30" rows="10" formControlName="about"></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+     </form>
+ </div>

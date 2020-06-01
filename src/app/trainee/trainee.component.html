@@ -1,0 +1,11 @@
+<div class="card milk" style="width: 18rem;" (click)="traineeSelected(trainees)">
+<img src="./assets/img/{{trainees.image}}" class="card-img-top profile_pic" alt="...">
+<div class="card-body">
+  <h5 class="card-title">{{trainees.name}}</h5>
+  <p><b>Complexion</b> {{trainees.complexion}}</p>
+  <p><b>Hobbies:</b></p>
+  <ul>
+    <li *ngFor="let hobby of trainees.hobbies">{{hobby}}</li>
+  </ul>
+  </div>
+</div>
